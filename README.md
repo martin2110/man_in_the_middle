@@ -18,6 +18,7 @@ EOF
 ```
 # run stunnel 
 ```
+yum install stunnel
 stunnel stunnel.conf
 ```
 # capture traffic
