@@ -17,7 +17,10 @@ connect = <TARGET>:443
 EOF
 ```
 # run stunnel 
+```
 stunnel stunnel.conf
-  
+```
 # capture traffic
-  cpdump -i lo port 31337 -s 0 -w /tmp/mitm.pcap
+```
+tcpdump -i lo port 31337 -s 0 -w /tmp/mitm.pcap
+```
