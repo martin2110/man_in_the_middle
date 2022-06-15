@@ -1,5 +1,7 @@
 ## create cert for stunnel
-```openssl req -batch -new -x509 -days 365 -nodes -out mitm.pem -keyout mitm.pem```
+```
+openssl req -batch -new -x509 -days 365 -nodes -out mitm.pem -keyout mitm.pem
+```
 ## create config
 ```
 cat <<EOF >> stunnel.conf
@@ -18,12 +20,12 @@ accept = 127.0.0.1:31337
 connect = <TARGET>:443
 EOF
 ```
-# run stunnel 
+## run stunnel 
 ```
 yum install stunnel
 stunnel stunnel.conf
 ```
-# capture traffic
+## capture traffic
 ```
 tcpdump -i lo port 31337 -s 0 -w /tmp/mitm.pcap
 ```
