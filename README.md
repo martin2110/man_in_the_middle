@@ -1,3 +1,5 @@
+## create cert for stunnel
+```openssl req -batch -new -x509 -days 365 -nodes -out mitm.pem -keyout mitm.pem```
 ## create config
 ```
 cat <<EOF >> stunnel.conf
