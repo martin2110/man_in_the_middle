@@ -1,4 +1,5 @@
-#create config
+## create config
+```
 cat <<EOF >> stunnel.conf
 foreground = yes
 debug = info
@@ -14,7 +15,7 @@ client = yes
 accept = 127.0.0.1:31337
 connect = <TARGET>:443
 EOF
-
+```
 # run stunnel 
 stunnel stunnel.conf
   
