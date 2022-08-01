@@ -29,3 +29,7 @@ stunnel stunnel.conf
 ```
 tcpdump -i lo port 31337 -s 0 -w /tmp/mitm.pcap
 ```
+```
+# this might be useful as well
+docker run andboson/http-cli-echo-logger
+```
